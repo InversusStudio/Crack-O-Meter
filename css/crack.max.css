@@ -1,0 +1,700 @@
+/*	Big ups to my homie Eric Meyer for this fine reset
+	http://meyerweb.com/eric/tools/css/reset/ 
+	v2.0 | 20110126
+	License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+@font-face {
+    font-family: 'Helvetica-Neue'; /* Changing the name to something other than default will force the browser to load the embedded font - remove if needed to speed up */
+    src: local("Helvetica Neue"),
+       	 local("HelveticaNeue"),
+    	 url('helveticaneue-webfont.eot');
+    src: url('helveticaneue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneue-webfont.woff') format('woff'),
+         url('helveticaneue-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	min-width: 1024px;
+	background: #FFF;
+	font-family: "Helvetica-Neue", Helvetica, sans-serif;
+	font-weight: 200;
+	font-size: 14pt;
+	color: #999;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+a {
+	color: rgba(247, 70, 74, 0.9);
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+	font-family: 'Unica One', sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 65pt;
+	color: rgba(151,187,205,1);
+}
+
+h1 {
+	margin: 0.67em 0;
+}
+
+h2 {
+	text-align: inherit;
+	font-size: 42pt;
+	margin: 0.83em 0;
+}
+
+h3 {
+	font-size: 22pt;
+	margin: 1em 0;
+}
+
+#chart {
+	margin: 0 auto;
+	display: block;
+	width: 1280px;
+	height: 600px;
+	position: relative;
+}
+
+ul#legend {
+	list-style: none;
+	margin: 40px auto;
+	display: inline-block;
+}
+
+ul#legend li {
+	float: left;
+	padding: 8px;
+	margin: 0 24px 0 0;
+}
+
+ul#legend li.money {
+	border-left: 35px solid rgba(247, 70, 74, 0.9);
+}
+
+ul#legend li.funders {
+	border-left: 35px solid rgba(151,187,205,1);
+}
+
+ul#legend li.money:hover {
+	background: rgba(247, 70, 74, 0.9);
+	color: #FFF;
+}
+
+ul#legend li.funders:hover {
+	background: rgba(151,187,205,1);
+	color: #FFF;
+}
+
+ul#legend li {
+	-webkit-transition: all 0.2s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 0.2s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.2s ease-out;  /* Opera 10.50–12.00 */
+          transition: all 0.2s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+section.half {
+	width: 50%;
+	float: left;
+}
+
+article {
+	width: 94%;
+	margin: 120px auto 20px;
+}
+
+p {
+	line-height: 18pt;
+	clear: both;
+	margin: 1em 0;
+}
+
+#load {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #FFF;
+	padding-top: 18%;
+}
+
+.ball {
+	-webkit-border-radius: 122px;
+	-moz-border-radius: 122px;
+	-o-border-radius: 122px;
+	border-radius: 122px;
+	margin: 60px auto 20px;
+}
+
+::selection {
+	background: #F7464A;
+	color: #FFF;
+}
+
+::-moz-selection {
+	background: #F7464A;
+	color: #FFF;
+}
+
+img::selection {
+	background:transparent;
+}
+
+img::-moz-selection {
+	background:transparent;
+}
+
+#donations {
+	margin-bottom: 100px;
+	clear: both;
+}
+
+.bubble {
+	background: rgba(247, 70, 74, 0.9);
+	margin: 18px;
+	display: inline-block;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 740%;
+	position: relative;
+	font-family: 'Unica One', sans-serif;
+	text-transform: uppercase;
+	
+	-webkit-transition: all 0.2s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 0.2s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.2s ease-out;  /* Opera 10.50–12.00 */
+          transition: all 0.2s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+.bubble:hover {
+	-webkit-transform: scale(1.1);  /* Chrome, Safari 3.1+ */
+-moz-transform: scale(1.1);  /* Firefox 3.5+ */
+-ms-transform: scale(1.1);  /* IE 9 */
+-o-transform: scale(1.1);  /* Opera 10.50-12.00 */
+transform: scale(1.1);  /* Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+.item {
+	display: inline-block;
+	position: relative;
+}
+
+.donation h3 {
+	margin: 0;
+	line-height: 22pt;
+}
+
+.bubble span {
+	display: block;
+	font-size: 34pt;
+}
+
+#median {
+	width: 267px;
+	height: 267px;
+	-webkit-border-radius: 267px;
+	-moz-border-radius: 267px;
+	-o-border-radius: 267px;
+	border-radius: 267px;
+	/* left: -58px; */
+}
+
+#average {
+	width: 411px;
+	height: 411px;
+	-webkit-border-radius: 411px;
+	-moz-border-radius: 411px;
+	-o-border-radius: 411px;
+	border-radius: 411px;
+	/* left: -38px; */
+}
+
+#mode {
+	width: 189px;
+	height: 189px;
+	-webkit-border-radius: 189px;
+	-moz-border-radius: 189px;
+	-o-border-radius: 189px;
+	border-radius: 189px;
+}
+
+.bubble-txt {
+	position: absolute;
+}
+
+#median .bubble-txt {
+	left: 61px;
+	top: 61px;
+}
+
+#average .bubble-txt {
+	left: 85px;
+	top: 131px;
+}
+
+#mode .bubble-txt {
+	left: 61px;
+	top: 25px;
+}
+
+aside.a-donations {
+	position: absolute;
+	opacity: 0;
+	background: #FFF;
+	background: rgba(255,255,255,0.8);
+	
+	-webkit-transition: all 0.2s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 0.2s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.2s ease-out;  /* Opera 10.50–12.00 */
+          transition: all 0.2s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+.bubble:hover + aside.a-donations {
+	opacity: 1;
+}
+
+
+/*** DONORS ***/
+
+#donor-dist {
+	margin: 0 0 100px;
+}
+
+#bar-area {
+	width: 35%;
+	float: left;
+}
+
+sup {
+	font-size: 61%;
+}
+
+#annotations {
+	width: 65%;
+	float: right;
+	height: 580px; /* Same as stack bar height */
+	text-align: left;
+	position: relative;
+}
+
+#anno-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#annotations #anno-overlay p {
+	margin: 14px 0;
+}
+
+#annotations #anno-overlay p.anno-first {
+	margin-top: 240px;
+}
+
+#annotations p {
+	margin: 0;
+}
+
+#annotations aside {
+	position: relative;
+	padding: 8px 0 14px;
+	background: #FFF;
+	/*
+border-top: 1px solid #F8F8F8;
+	border-bottom: 1px solid #F8F8F8;
+*/
+}
+
+#annotations aside p {
+	position: absolute;
+    top: 50%;    
+    left: 0;
+    width: 100%;
+}
+
+.anno-wrap {
+	display: none;
+	height: 100%;
+}
+
+
+#stack-bar {
+	width: 140px;
+	height: 580px;
+	margin: 0 30px;
+	float: right;
+}
+
+.big-segment {
+	position: relative;
+	-webkit-transition: all 0.2s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 0.2s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.2s ease-out;  /* Opera 10.50–12.00 */
+          transition: all 0.2s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+.big-segment#top,
+#anno-top {
+	height: 68%;
+}
+
+.big-segment#bottom,
+#anno-bottom {
+	height: 32%;
+}
+
+.segment {
+	width: 100%;
+	text-indent: -99999px;
+	position: relative;
+	
+	-webkit-transition: all 0.2s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 0.2s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.2s ease-out;  /* Opera 10.50–12.00 */
+          transition: all 0.2s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+.segment span,
+.big-segment span {
+	position: absolute;
+    top: 50%;    
+    left: 0;
+    width: 100%;
+    z-index: 500;
+    color: #FFF;
+	font-family: 'Unica One', sans-serif;
+	text-transform: uppercase;
+}
+
+.big-segment:hover span.bigspan {
+	opacity: 0;
+}
+
+.big-segment:hover .segment {
+	margin: 14px 0;
+	text-indent: inherit;
+}
+
+.big-segment#top:hover + .big-segment#bottom {
+	margin: 28px 0 0;
+}
+
+.big-segment#bottom:hover + #stack-bar {
+	margin: 0 0 98px;
+}
+
+.segment#top-10 {
+	height: 82%;
+	background: rgba(247, 70, 74, 1);
+}
+
+#a-top-10 {
+	height: 82%;
+}
+
+.segment#sec-10 {
+	height: 18%;
+	background: rgba(247, 70, 74, 1);
+}
+
+.segment#sec-10 span,
+#annotations aside#a-sec-10 p {
+	top: 35%;
+}
+
+#a-sec-10 {
+	height: 18%;
+}
+
+.segment#sec-20 {
+	height: 50%;
+	background: rgba(151,187,205,1);
+}
+
+.segment#sec-20 span,
+#annotations aside#a-sec-20 p {
+	top: 42%;
+}
+
+#a-sec-20 {
+	height: 50%;
+}
+
+.segment#thr-20 {
+	height: 25%;
+	background: rgba(151,187,205,1);
+}
+
+.segment#thr-20 span,
+#annotations aside#a-thr-20 p {
+	top: 33%;
+}
+
+#a-thr-20 {
+	height: 25%;
+}
+
+.segment#fth-20,
+.segment#bot-20 {
+	height: 12.5%;
+	background: rgba(151,187,205,1);
+}
+
+.segment#fth-20 span,
+.segment#bot-20 span,
+#annotations aside#a-fth-20 p,
+#annotations aside#a-bot-20 p {
+	top: 7%;
+}
+
+#a-fth-20,
+#a-bot-20 {
+	height: 12.5%;
+}
+
+
+/*** PERKS PIES ****/
+
+#perks {
+	overflow: auto;
+}
+
+.pie {
+	float: left;
+	width: 50%;
+	margin-bottom: 60px;
+}
+
+#pop-perks,
+#prf-perks {
+	margin: 0 auto;
+	width: 450px;
+	height: 450px;
+}
+
+.pie-legend {
+	margin: 12px 0 0;
+}
+
+.pie-legend ul#legend {
+	margin: 0;
+	text-align: left;
+	display: inline-block;
+}
+
+.pie-legend ul#legend li {
+	float: none;
+}
+
+ul#legend li.flag {
+	border-left: 35px solid #D4CCC5;
+}
+
+ul#legend li.flag:hover {
+	background: #D4CCC5;
+	color: #FFF;
+}
+
+ul#legend li.thanks {
+	border-left: 35px solid #E2EAE9;
+}
+
+ul#legend li.thanks:hover {
+	background: #E2EAE9;
+}
+
+ul#legend li.print {
+	border-left: 35px solid #4D5360;
+}
+
+ul#legend li.print:hover {
+	background: #4D5360;
+	color: #FFF;
+}
+
+ul#legend li.book {
+	border-left: 35px solid #97BBCD;
+}
+
+ul#legend li.book:hover {
+	background: #97BBCD;
+	color: #FFF;
+}
+
+ul#legend li.ebook {
+	border-left: 35px solid #F7464A;
+}
+
+ul#legend li.ebook:hover {
+	background: #F7464A;
+	color: #FFF;
+}
+
+ul#legend li.other {
+	border-left: 35px solid #CCC;
+}
+
+ul#legend li.other:hover {
+	background: #CCC;
+	color: #FFF;
+}
+
+ul#legend li.dinner {
+	border-left: 35px solid #E0E4CC;
+}
+
+ul#legend li.dinner:hover {
+	background: #E0E4CC;
+}
+
+ul#legend li.book2 {
+	border-left: 35px solid #69D2E7;
+}
+
+ul#legend li.book2:hover {
+	background: #69D2E7;
+	color: #FFF;
+}
+
+ul#legend li.thanks2 {
+	border-left: 35px solid #D4CCC5;
+}
+
+ul#legend li.thanks2:hover {
+	background: #D4CCC5;
+	color: #FFF;
+}
+
+ul#legend li.flag2 {
+	border-left: 35px solid #E2EAE9;
+}
+
+ul#legend li.flag2:hover {
+	background: #E2EAE9;
+}
+
+ul#legend li.iphone {
+	border-left: 35px solid #4D5360;
+}
+
+ul#legend li.iphone:hover {
+	background: #4D5360;
+	color: #FFF;
+}
+
+ul#legend li.print2 {
+	border-left: 35px solid #97BBCD;
+}
+
+ul#legend li.print2:hover {
+	background: #97BBCD;
+	color: #FFF;
+}
+
+/*** Change pie slice colours to match both ***/
+
+dt {
+	font-weight: bold;
+	font-size: 440%;
+	font-family: 'Unica One', sans-serif;
+	color: #F7464A;
+}
+
+dd {
+	margin: 8px 0 24px;
+}
+
+/** SHARE **/
+
+#share {
+	margin: 80px 0 0;
+}
+
+.addthis_toolbox {
+	display: inline-block;
+}
+
+.at300b {
+	background: #F8F8F8;
+	padding: 4px 18px !important;
+	margin-right: 1px;
+	-webkit-transition: all 0.2s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 0.2s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.2s ease-out;  /* Opera 10.50–12.00 */
+          transition: all 0.2s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+.at300b:hover {
+	background: #F7464A;
+	color: #FFF;
+	opacity: 1 !important;
+}
+
+footer {
+	margin: 0 0 40px;
+}
+
+
+footer small {
+	font-size: 9pt;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}

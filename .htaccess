@@ -1,0 +1,53 @@
+<IfModule mod_rewrite.c>
+	#gzip re-writes
+    RewriteEngine On
+    RewriteCond %{HTTP:Accept-Encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}.gz -f
+    RewriteRule (.*\.(html|js|css))$ $1.gz [L]
+	#mobile re-writes
+
+	#OLD SIMPLE CODE
+	#RewriteEngine On
+	#RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
+	#RewriteRule ^$ http://m.crackometer.inversus-studio.com [L,R=302]
+	
+	# If the user is asking for the fullsite, set a cookie, remove the query, and stop.
+	RewriteCond %{QUERY_STRING} ^fullsite$
+	RewriteRule ^$ http://crackometer.inversus-studio.com [L,CO=fullsite:yes:.crackometer.inversus-studio.com]
+ 
+	# If the user is asking for the mobilesite, set a cookie, remove the query, redirect and stop.
+	RewriteCond %{QUERY_STRING} ^mobilesite$
+	RewriteRule ^$ http://m.crackometer.inversus-studio.com [L,CO=fullsite:no:.crackometer.inversus-studio.com] 
+	 
+	# If the visit is from a mobile user agent, and there's no fullsite cookie, redirect and stop
+	# if the browser accepts these mime-types, it's definitely mobile, or pretending to be
+	# RewriteCond %{HTTP_ACCEPT} "text\/vnd\.wap\.wml|application\/vnd\.wap\.xhtml\+xml" [NC,OR]
+	# a bunch of user agent tests
+	RewriteCond %{HTTP_USER_AGENT} "sony|symbian|nokia|samsung|mobile|windows ce|epoc" [NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} "mini|nitro|j2me|midp-|cldc-|netfront|mot|up\.browser|up\.link|audiovox"[NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} "ericsson,|panasonic|philips|sanyo|sharp|sie-"[NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} "portalmmm|blazer|avantgo|danger|palm|series60|palmsource|pocketpc"[NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} "smartphone|rover|ipaq|au-mic,|alcatel|ericy|vodafone\/|wap1\.|wap2\.|iPhone|android"[NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} "android|blackberry|iphone|ipod|iemobile|opera mobile|palmos|webos|googlebot-mobile" [NC]
+	# Note: I've updated the conditions above to skip iPads. However,
+	# mobile safari still reports itself as 'mobile' and thus needs an explicit opt-out
+	RewriteCond %{HTTP_USER_AGENT} !iPad [NC]
+	RewriteCond %{HTTP_COOKIE} !^.*fullsite=yes.*$ [NC]
+	RewriteRule ^$ http://m.crackometer.inversus-studio.com [L,R=302]
+	
+</IfModule>
+AddDefaultCharset UTF-8
+
+<Files "*.woff">
+	ForceType 'application/font-woff'
+</Files>
+AddEncoding x-gzip .gz
+<FilesMatch .*\.html.gz>
+    ForceType text/html
+</FilesMatch>
+<FilesMatch .*\.css.gz>
+    ForceType text/css
+</FilesMatch>
+<FilesMatch .*\.js.gz>
+    ForceType application/x-javascript
+</FilesMatch>
